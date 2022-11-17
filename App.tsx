@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import Nav from './src/components/Nav'
 
 export default function App() {
   return (
@@ -9,11 +10,11 @@ export default function App() {
         colors={['rgba(59, 89, 152, 0.1)', 
                  'rgba(59, 89, 152, 0.1))',
                  'rgba(255, 0, 0, 0.05)']}
-        start={[0.5, 0]}
-        end={[0.5, 0.1]}
-        style={styles.linearGradient}
+                 start={[0.5, 0.1]}
+                 end={[0.5, 0.1]}
+                 style={styles.linearGradient}
       >
-        <Text>Hello World!</Text>
+        <Nav/>
       </LinearGradient>
             
       <StatusBar style='auto' />
@@ -24,11 +25,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   linearGradient: {
-    flex: 1,
     height: '100%',
     width: '100%',
     position: 'absolute',
