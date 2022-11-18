@@ -1,4 +1,3 @@
-import { Color } from 'melonjs'
 import { StyleSheet, View, Image, Text, Pressable } from 'react-native'
 
 export default function Nav() {
