@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Nav from './src/components/Nav'
 import Intro from './src/components/Intro';
+import NewsLetter from './src/components/NewsLetter';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       />
         <Nav/>
         <Intro/>
+        <NewsLetter/>
             
         <StatusBar style='auto' />
     </View>
