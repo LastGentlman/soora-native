@@ -8,16 +8,15 @@ export default function App() {
     <View style={styles.container}>
       <LinearGradient
         colors={['rgba(59, 89, 152, 0.1)', 
-                 'rgba(59, 89, 152, 0.1))',
-                 'rgba(255, 0, 0, 0.05)']}
-                 start={[0.5, 0.1]}
-                 end={[0.5, 0.1]}
-                 style={styles.linearGradient}
-      >
+                  'rgba(59, 89, 152, 0.1))',
+                  'rgba(255, 0, 0, 0.05)']}
+                  start={[0.5, 0.1]}
+                  end={[0.5, 0.1]}
+                  style={styles.linearGradient}
+      />
         <Nav/>
-      </LinearGradient>
             
-      <StatusBar style='auto' />
+        <StatusBar style='auto' />
     </View>
   );
 }
@@ -25,6 +24,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center'
   },
   linearGradient: {
     height: '100%',
