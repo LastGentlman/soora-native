@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Nav from './src/components/Nav'
+import Intro from './src/components/Intro';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
                   style={styles.linearGradient}
       />
         <Nav/>
+        <Intro/>
             
         <StatusBar style='auto' />
     </View>

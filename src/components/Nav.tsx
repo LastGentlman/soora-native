@@ -9,7 +9,10 @@ export default function Nav() {
             />
             <Pressable style={styles.button}>
                 <Text style={styles.textBtn}>Contact Us</Text>
-                <Image style={styles.imgBtn} source={require('../../assets/images/contact-icon.png')}/>
+                <Image
+                    style={styles.imgBtn}
+                    source={require('../../assets/images/contact-icon.png')}
+                />
             </Pressable>
         </View>
     )
