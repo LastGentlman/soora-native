@@ -1,5 +1,7 @@
-import { View, Image, Text, StyleSheet, TextInput, Pressable} from 'react-native'
+import { View, Image, Text, StyleSheet, TextInput, Alert, Pressable} from 'react-native'
 import { useFonts } from 'expo-font'
+import { useState } from 'react'
+import * as Linking from 'expo-linking'
 
 
 export default function NewsLetter() {
@@ -10,9 +12,29 @@ export default function NewsLetter() {
         'Inter-Semi': require('../../assets/fonts/Inter-SemiBold.ttf'),
     })
 
+    const [inputValue, setInputValue] = useState('')
+
     if (!fontsLoaded) {
         return null;
     }
+
+    const inputHandler = (e: string) => {
+        setInputValue(e)
+    }
+
+    const onClick = () => {
+        Alert.alert("Hello, This is a demo exercice", "created by @IngRoy.com",
+          [ 
+            {
+              text: "Ok 👍",
+            }
+          ],
+          {
+            cancelable: true,
+          }
+        )
+        setInputValue('')
+    }    
 
     return (
         <View style={styles.container}>
@@ -27,13 +49,14 @@ export default function NewsLetter() {
                     When we Launch
                 </Text>
                 <View style={styles.inputContainer}>
-                    <Pressable style={styles.notifyBtn}>
+                    <Pressable style={styles.notifyBtn} onPressOut={onClick}>
                         <Text style={styles.textBtn}>Notify Me</Text>
                     </Pressable>
                     <TextInput
                         style={styles.input}
                         keyboardType='email-address'
-
+                        onChangeText={inputHandler}
+                        value={inputValue}
                     />
                 </View>
             </View>
@@ -82,6 +105,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 4,
         left: 246,
+        zIndex:2
     },
     textBtn: {
         color: 'rgb(255,255,255)',

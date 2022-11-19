@@ -6,17 +6,18 @@ const contactUs = () => {
       [ 
         {
           text: "Cancel",
-          onPress: () => {
-            console.log("Do nothing because we cancelled");
-          }
+          style: 'cancel'
         },
         {
-          text: "OK",
+          text: "Contact",
           onPress: () => {
             Linking.openURL('mailto:sooratheapp@gmail.com');
           }
         }
-      ]
+      ],
+      {
+        cancelable: true,
+      }
     )
 }
 
