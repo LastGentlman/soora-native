@@ -1,4 +1,24 @@
-import { StyleSheet, View, Image, Text, Pressable } from 'react-native'
+import { StyleSheet, View, Image, Text, Alert, Pressable } from 'react-native'
+import * as Linking from 'expo-linking'
+
+const contactUs = () => {
+    Alert.alert("Reach out to us through", "sooratheapp@gmail.com",
+      [ 
+        {
+          text: "Cancel",
+          onPress: () => {
+            console.log("Do nothing because we cancelled");
+          }
+        },
+        {
+          text: "OK",
+          onPress: () => {
+            Linking.openURL('mailto:sooratheapp@gmail.com');
+          }
+        }
+      ]
+    )
+}
 
 export default function Nav() {
     return (
@@ -7,7 +27,7 @@ export default function Nav() {
                 style={styles.logo}
                 source={require('../../assets/images/logo.png')}
             />
-            <Pressable style={styles.button}>
+            <Pressable style={styles.button} onPressOut={contactUs}>
                 <Text style={styles.textBtn}>Contact Us</Text>
                 <Image
                     style={styles.imgBtn}
